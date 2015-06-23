@@ -5,11 +5,12 @@
  */
 package br.com.dextraining;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import br.com.dextraining.page.LoginPage;
 import br.com.dextraining.page.PaginainicialPage;
 import br.com.dextraining.selenium.SeleniumTestCase;
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  *
