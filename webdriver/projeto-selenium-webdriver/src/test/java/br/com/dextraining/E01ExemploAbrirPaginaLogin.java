@@ -5,12 +5,11 @@
  */
 package br.com.dextraining;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -21,9 +20,9 @@ public class E01ExemploAbrirPaginaLogin {
 	@Test
 	public void login() {
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://localhost:4567/login.html");
+		//driver.get("http://localhost:4567/login.html");
+		driver.get("http://www.google.com.br");
+		Assert.assertTrue(driver.findElement(By.name("btnI")).isDisplayed());
 	}
 
-	
-	
 }
