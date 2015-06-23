@@ -23,6 +23,7 @@ public class E01ExemploAbrirPaginaLogin {
 		//driver.get("http://localhost:4567/login.html");
 		driver.get("http://www.google.com.br");
 		Assert.assertTrue(driver.findElement(By.name("btnI")).isDisplayed());
+		driver.close();
 	}
 
 }
