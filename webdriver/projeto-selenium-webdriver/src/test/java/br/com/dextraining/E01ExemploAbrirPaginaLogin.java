@@ -24,62 +24,6 @@ public class E01ExemploAbrirPaginaLogin {
 		driver.get("http://localhost:4567/login.html");
 	}
 
-	@Test
-	public void googleSearch() {
-		WebDriver driver = new FirefoxDriver();
-		driver.get("http://google.com");
-		driver.findElement(By.name("btnI")).click();
-	}
-
-	@Test
-	public void gmailLogin() {
-		WebDriver driver = new FirefoxDriver();
-		driver.get("http://gmail.com");
-		driver.findElement(By.id("Email")).sendKeys("teste.selenium.training@gmail.com");
-		driver.findElement(By.id("next")).click();
-		// Thread.sleep(2000);
-		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return driver.findElement(By.id("Passwd")).isDisplayed();
-			}
-		});
-		driver.findElement(By.id("Passwd")).sendKeys("teste321456");
-		driver.findElement(By.id("signIn")).click();
-		driver.close();
-	}
 	
-	@Test
-	public void gmailLogout() throws InterruptedException {
-		WebDriver driver = new FirefoxDriver();
-		driver.get("http://gmail.com");
-		driver.findElement(By.id("Email")).sendKeys("teste.selenium.training@gmail.com");
-		driver.findElement(By.id("next")).click();
-		// Thread.sleep(2000);
-		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return driver.findElement(By.id("Passwd")).isDisplayed();
-			}
-		});
-		
-		driver.findElement(By.id("Passwd")).sendKeys("teste321456");
-		driver.findElement(By.id("signIn")).click();
-		
-		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return driver.findElement(By.className("gb_k")).isDisplayed();
-			}
-		});
-		
-		driver.findElement(By.className("gb_k")).click();
-		
-		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-			public Boolean apply(WebDriver driver) {
-				return driver.findElement(By.id("gb_71")).isDisplayed();
-			}
-		});
-		
-		driver.findElement(By.id("gb_71")).click();
-		driver.close();
-	}
 	
 }
