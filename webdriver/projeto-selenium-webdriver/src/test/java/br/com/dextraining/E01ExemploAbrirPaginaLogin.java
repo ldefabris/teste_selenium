@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  *
- * @author dherik
+ * @author dherik 
  */
 public class E01ExemploAbrirPaginaLogin {
 
