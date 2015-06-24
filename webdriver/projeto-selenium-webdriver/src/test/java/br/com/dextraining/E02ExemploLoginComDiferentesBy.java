@@ -5,9 +5,11 @@
  */
 package br.com.dextraining;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -82,6 +84,19 @@ public class E02ExemploLoginComDiferentesBy {
         esperarPor(driver, "lnkPaginaInicial");
     }
 
+    
+    @Test
+    public void exemploDaUrlDoGoogle() throws InterruptedException{
+    	WebDriver driver = new FirefoxDriver();
+        driver.get("http://www.google.com");
+        WebElement linkDoGoogle = driver.findElement(By.linkText("Gmail"));
+        Assert.assertTrue(linkDoGoogle.isDisplayed());
+        Thread.sleep(5000);
+        driver.close();
+        
+    	
+    }
+    
     /**
      * Este metodo realiza a espera da exibicao do elemento na tela.
      *

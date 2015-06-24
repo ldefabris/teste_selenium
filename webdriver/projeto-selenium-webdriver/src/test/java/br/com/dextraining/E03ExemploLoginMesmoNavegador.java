@@ -87,6 +87,21 @@ public class E03ExemploLoginMesmoNavegador {
 
         esperarPor(driver, "lnkPaginaInicial");
     }
+    
+    @Test
+    public void exercicioDaSala() throws InterruptedException {
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://localhost:4567/login.html");
+        driver.findElement(By.name("inputEmail")).sendKeys("usuario@dominio.com");
+        driver.findElement(By.name("inputPassword")).sendKeys("senha");
+        
+        driver.findElement(By.linkText("Perdi minha senha")).click();
+        driver.findElement(By.partialLinkText("Perdi")).click();
+        
+        driver.findElement(By.name("btnLogin")).click();
+
+        esperarPor(driver, "lnkPaginaInicial");
+    }
 
     private void esperarPor(WebDriver driver, String elementoDeId) throws InterruptedException {
         Thread.sleep(3000); //apenas para podermos visualizar a tela antes da verificacao

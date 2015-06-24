@@ -31,11 +31,14 @@ public class E01ExemploAbrirPaginaLogin {
 		WebElement btnNext = recuperaInstanciaDoELemento(driver, "next");
 		btnNext.click();
 		
-		Thread.sleep(3000);
+
+		Thread.sleep(10000);
 		WebElement passField = recuperaInstanciaDoELemento(driver, "Passwd");
 		passField.sendKeys("andreiwid");
-		
+
 		WebElement btnsignIn = recuperaInstanciaDoELemento(driver, "signIn");
+		
+			
 		btnsignIn.click();
 
 		driver.close();
