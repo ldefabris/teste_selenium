@@ -3,6 +3,8 @@ package br.com.dextraining;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -87,6 +89,11 @@ public class AulaDoisSelenium {
 		// conchetes
 		WebElement milagre = driver
 				.findElementByCssSelector("div.ch-g1-5 ul.list a[title='Carros, Motos e Outros']");
+		WebDriver dr = driver;
+		dr.findElement(By.cssSelector("div.ch-g1-5 ul.list a[title='Carros, Motos e Outros']"));
+		//Buscando por IDS: (No Console: $('form#formSearch input#query') )
+		 milagre = driver
+				.findElementByCssSelector("$('form#formSearch input#query') ");
 		Assert.assertNotNull(milagre);
 
 	}
