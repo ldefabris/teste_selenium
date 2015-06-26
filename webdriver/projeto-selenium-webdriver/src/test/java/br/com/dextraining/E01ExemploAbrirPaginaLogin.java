@@ -5,6 +5,8 @@
  */
 package br.com.dextraining;
 
+import java.time.temporal.ChronoUnit;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -37,9 +39,7 @@ public class E01ExemploAbrirPaginaLogin {
 		passField.sendKeys("andreiwid");
 
 		WebElement btnsignIn = recuperaInstanciaDoELemento(driver, "signIn");
-		
-			
-		btnsignIn.click();
+				btnsignIn.click();
 
 		driver.close();
 	}

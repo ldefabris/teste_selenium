@@ -1,14 +1,13 @@
 package br.com.dextraining;
 
-import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.com.dextraining.utils.EsperaUtil;
 
 public class AulaDoisSelenium {
 
@@ -22,8 +21,8 @@ public class AulaDoisSelenium {
 		}
 		// driver.get("http://localhost:4567/login.html");
 		// driver.get("http://www.mercadolivre/imoveis/");
-		driver.get("http://www.mercadolivre/veiculos/");
-		;
+		driver.get("http://www.mercadolivre/");
+		// driver.get("http://www.mercadolivre/veiculos/");
 	}
 
 	// l@After
@@ -57,7 +56,7 @@ public class AulaDoisSelenium {
 	 */
 	@Test
 	public void exercico1() throws InterruptedException {
-		Thread.sleep(1000);
+		EsperaUtil.esperaDaFormaCorreta(5000, "vehiculo", driver);
 		new Select(driver.findElementById("vehiculo"))
 				.selectByVisibleText("Motos");
 		new Select(driver.findElementById("firstCombo"))
@@ -75,11 +74,26 @@ public class AulaDoisSelenium {
 
 	}
 
+	@Test
+	public void buscaPorXPatch() {
+		EsperaUtil.esperaDaFormaCorreta(5000, "formSearch", driver);
+		@SuppressWarnings("unused")
+		// Para usar a mesma coisa no browswer no chrome coloca:
+		// $('div.ch-g1-5 ul.list a[title="Carros, Motos e Outros"]')
+		// Onde $('') <- busca elementos do HTML
+		// div.XXX <- busca uma div que tenha essa classe e depois uma ul.YYY
+		// que tenha esta classe.
+		// a[xxxx] busca uma tag a que tenha como atributos o que esta dentro do
+		// conchetes
+		WebElement milagre = driver
+				.findElementByCssSelector("div.ch-g1-5 ul.list a[title='Carros, Motos e Outros']");
+		Assert.assertNotNull(milagre);
+
+	}
+
 	private void clicaNasCoisas(String algo) throws InterruptedException {
 		driver.findElementById(algo).click();
 		Thread.sleep(1000);
 	}
-
-	
 
 }
