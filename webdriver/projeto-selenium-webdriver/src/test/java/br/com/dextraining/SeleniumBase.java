@@ -1,5 +1,6 @@
 package br.com.dextraining;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -34,8 +35,9 @@ public abstract class SeleniumBase {
 	protected abstract boolean isSecure();
 
 	protected abstract String getPaginaCorreta();
-
-	// l@After
+	
+	
+	@After
 	public void depois() {
 		if (driver != null) {
 			driver.close();
