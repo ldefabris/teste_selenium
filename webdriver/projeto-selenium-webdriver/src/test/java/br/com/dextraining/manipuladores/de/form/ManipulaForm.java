@@ -1,8 +1,10 @@
-package br.com.dextraining;
+package br.com.dextraining.manipuladores.de.form;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import br.com.dextraining.utils.EsperaUtil;
 
 public class ManipulaForm {
 	private FirefoxDriver driver;
@@ -13,11 +15,9 @@ public class ManipulaForm {
 	}
 
 	public void setName(String nome) {
+		EsperaUtil.esperaDaFormaCorreta(3000, "signupFirstName", driver);
 		WebElement element = driver.findElementById("signupFirstName");
 		element.sendKeys(nome);
-		// dps de dar o send keys atualizou o Dom mas a minha instância não,
-		// então forço uma atualizaçãozinha aqui...
-		WebElement estadoFinal = driver.findElementById("signupFirstName");		
 	}
 
 }

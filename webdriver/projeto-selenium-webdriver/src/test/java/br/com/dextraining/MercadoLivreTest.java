@@ -1,5 +1,8 @@
 package br.com.dextraining;
 
+import br.com.dextraining.manipuladores.de.form.ManipulaForm;
+import br.com.dextraining.utils.EsperaUtil;
+
 public class MercadoLivreTest extends SeleniumBase {
 
 	@Override

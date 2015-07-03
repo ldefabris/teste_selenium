@@ -24,5 +24,23 @@ public class EsperaUtil {
 					}
 				});
 	}
+	
+	/**
+	 * Aguarda até algum item aparecer na TEla por xpatbh
+	 * 
+	 * @param tempo
+	 * @param nomeDoQueEstouVendo
+	 * @param driver
+	 */
+	static public void esperaDaFormaCorreta(int tempo,
+			By busca, WebDriver driver) {
+		(new WebDriverWait(driver, tempo))
+				.until(new ExpectedCondition<Boolean>() {
+					public Boolean apply(WebDriver driver) {
+						return driver.findElement(busca)
+								.isDisplayed();
+					}
+				});
+	}
 
 }
